@@ -1,0 +1,12 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: payflow
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SEED_DEMO
+        value: "1"
